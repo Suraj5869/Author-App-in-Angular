@@ -1,0 +1,10 @@
+<p>search-author works!</p>
+<form [formGroup]="searchForm" (click)="submit()">
+    <input type="text" formControlName="name">
+    <button>Search</button>
+</form>
+
+<ul *ngIf="authorData">
+    <li>{{authorData.name}}</li>
+    <li>{{authorData.email}}</li>
+</ul>

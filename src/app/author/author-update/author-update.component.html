@@ -1,0 +1,26 @@
+<p>author-update</p>
+<form [formGroup]="authorForm" (ngSubmit)="updateAuthor()">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" placeholder="Enter Name" formControlName="name">
+        <span>*</span>
+    </div>
+    <span *ngIf="nameValidator?.errors?.['required'] && nameValidator?.touched">
+        Name is required.
+    </span>
+    <span *ngIf="nameValidator?.errors?.['pattern'] && nameValidator?.touched">
+        Name must contain only alphabets.
+    </span>
+    <br>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" placeholder="Enter Email" formControlName="email">
+        <span>*</span>
+    </div>
+    <span *ngIf="emailValidator?.errors?.['required'] && emailValidator?.touched">
+        Email is required field
+    </span>
+    <span *ngIf="emailValidator?.errors?.['email'] && emailValidator?.touched">
+        Please enter a valid email address.
+    </span>
+    <br>
+    <button class="btn btn-primary mb-3">Add</button>
+</form>

@@ -1,0 +1,18 @@
+<button routerLink="addAuthor">Create new Record</button>
+<button routerLink="searchAuthor">Search Author</button>
+<table border="1">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>No. of Textbooks</th>
+    <th>Delete ?</th>
+    <th>Update</th>
+  </tr>
+  <tr *ngFor="let author of authorData">
+    <td>{{author.name}}</td>
+    <td>{{author.email}}</td>
+    <td>{{author.totalBooks}}</td>
+    <td><button (click)="deleteAuthor(author.id)">Delete</button></td>
+    <td><button (click)="sendData(author.id)">Update</button></td>
+  </tr>
+</table>
